@@ -74,6 +74,7 @@ extern Vector		g_vecAttackDir;
 		"weapon_shotgun",			// 24
 		"unused (weapon_molotov) 25",// 25
 		"item_dynamic_resupply",	// 26
+		"weapon_rocket",			// 27
 	};
 #else
 	// Half-Life 1 spawn objects!

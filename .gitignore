@@ -54,3 +54,16 @@ config.cfg
 # shader files
 *.tmp
 
+mp/game/bin/*
+mp/game/mod_hl2mp/bin/*
+*.cache
+*.dt
+*.vcxproj.*
+*.pdb
+mp/src/utils/*
+mp/src/fgdlib/*
+*.dll
+*.lib
+*.sentinel
+*.dat
+*.ain

@@ -252,12 +252,13 @@ protected:
 	CNetworkVar( bool, m_bGuiding );
 	CNetworkVar( bool, m_bHideGuiding );
 
-	CNetworkHandle( CBaseEntity,	m_hMissile );
 	CNetworkVar(	Vector,			m_vecLaserDot );
 
 #ifndef CLIENT_DLL
 	CHandle<CLaserDot>	m_hLaserDot;
 #endif
+	CNetworkHandle(CBaseEntity, m_hMissile);
+
 
 private:
 	

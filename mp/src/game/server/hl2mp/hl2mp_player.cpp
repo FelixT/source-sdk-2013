@@ -168,7 +168,7 @@ void CHL2MP_Player::GiveAllItems( void )
 	CBasePlayer::GiveAmmo( 1,	"smg1_grenade");
 	CBasePlayer::GiveAmmo( 255,	"Buckshot");
 	CBasePlayer::GiveAmmo( 32,	"357" );
-	CBasePlayer::GiveAmmo( 3,	"rpg_round");
+	CBasePlayer::GiveAmmo( 12,	"rpg_round");
 
 	CBasePlayer::GiveAmmo( 1,	"grenade" );
 	CBasePlayer::GiveAmmo( 2,	"slam" );
@@ -203,6 +203,8 @@ void CHL2MP_Player::GiveDefaultItems( void )
 	CBasePlayer::GiveAmmo( 1,	"grenade" );
 	CBasePlayer::GiveAmmo( 6,	"Buckshot");
 	CBasePlayer::GiveAmmo( 6,	"357" );
+	CBasePlayer::GiveAmmo( 12,	"rpg_round" );
+	//CBasePlayer::GiveAmmo(3, "rockets");
 
 	if ( GetPlayerModelType() == PLAYER_SOUNDS_METROPOLICE || GetPlayerModelType() == PLAYER_SOUNDS_COMBINESOLDIER )
 	{
@@ -217,6 +219,8 @@ void CHL2MP_Player::GiveDefaultItems( void )
 	GiveNamedItem( "weapon_smg1" );
 	GiveNamedItem( "weapon_frag" );
 	GiveNamedItem( "weapon_physcannon" );
+	GiveNamedItem( "weapon_rpg" );
+	GiveNamedItem("weapon_rocket");
 
 	const char *szDefaultWeaponName = engine->GetClientConVarValue( engine->IndexOfEdict( edict() ), "cl_defaultweapon" );
 
@@ -331,6 +335,8 @@ void CHL2MP_Player::Spawn(void)
 	SetPlayerUnderwater(false);
 
 	m_bReady = false;
+
+	m_iMaxHealth = m_iHealth = 125;
 }
 
 void CHL2MP_Player::PickupObject( CBaseEntity *pObject, bool bLimitMassAndSize )

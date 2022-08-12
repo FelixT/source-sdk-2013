@@ -3,11 +3,11 @@
 WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"	"#HL2_RPG"
+	"printname"	"#HL2_ROCKET"
 	"viewmodel"				"models/weapons/v_rpg.mdl"
 	"playermodel"			"models/weapons/w_rocket_launcher.mdl"
 	"anim_prefix"			"missile launcher"
-	"bucket"				"4"
+	"bucket"				"1"
 	"bucket_position"		"1"
 	"autoswitchfrom"		"1"
 
@@ -21,17 +21,12 @@ WeaponData
 
 	"weight"				"0"
 	"item_flags"			"0"
-	"damage"			"150"
+	"damage"			"80"
 
 	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
 	SoundData
 	{
 		"single_shot"		"Weapon_RPG.Single"
-		"single_shot_npc"	"Weapon_RPG.NPC_Single"
-		//Laser on
-		"special1"			"Weapon_RPG.LaserOn"
-		//Laser off
-		"special2"			"Weapon_RPG.LaserOff"
 		"empty"				"Weapon_SMG1.Empty"
 	}
 
