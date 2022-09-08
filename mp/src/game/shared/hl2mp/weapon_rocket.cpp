@@ -470,12 +470,21 @@ void CWeaponRocket::PrimaryAttack( void )
 	if (!pPlayer)
 		return;
 
+	// Cancel reload animation
+	if (GetActivity() == ACT_VM_RELOAD) {
+		AbortReload();
+	}
+
+
+	if (UsesClipsForAmmo1() && !m_iClip1)
+	{
+		if (GetActivity() != ACT_VM_RELOAD)
+			Reload();
+		return;
+	}
+
 	// Can't have an active missile out
 	if (m_hRocketMissile != NULL)
-		return;
-
-	// Can't be reloading
-	if ( GetActivity() == ACT_VM_RELOAD )
 		return;
 
 	Vector vecOrigin;
@@ -529,8 +538,7 @@ void CWeaponRocket::PrimaryAttack( void )
 //-----------------------------------------------------------------------------
 void CWeaponRocket::DecrementAmmo( CBaseCombatCharacter *pOwner )
 {
-	// Take away our primary ammo type
-	pOwner->RemoveAmmo( 1, m_iPrimaryAmmoType );
+	m_iClip1--;
 }
 
 //-----------------------------------------------------------------------------
@@ -600,11 +608,6 @@ void CWeaponRocket::Drop( const Vector &vecVelocity )
 void CWeaponRocket::NotifyRocketDied( void )
 {
 	m_hRocketMissile = NULL;
-
-	if ( GetActivity() == ACT_VM_RELOAD )
-		return;
-
-	Reload();
 }
 
 //-----------------------------------------------------------------------------
@@ -613,18 +616,17 @@ void CWeaponRocket::NotifyRocketDied( void )
 bool CWeaponRocket::Reload( void )
 {
 	CBaseCombatCharacter *pOwner = GetOwner();
-	
-	if ( pOwner == NULL )
+
+	if (pOwner == NULL)
 		return false;
 
-	if ( pOwner->GetAmmoCount(m_iPrimaryAmmoType) <= 0 )
-		return false;
+	bool fRet = DefaultReload(GetMaxClip1(), GetMaxClip2(), ACT_VM_RELOAD);
+	if (fRet) {
+		//pOwner->SetNextAttack(gpGlobals->curtime + 0.3f);
+		//m_flNextPrimaryAttack = gpGlobals->curtime + 0.3f;
+	}
 
-	WeaponSound( RELOAD );
-	
-	SendWeaponAnim( ACT_VM_RELOAD );
-
-	return true;
+	return fRet;
 }
 
 #ifdef CLIENT_DLL

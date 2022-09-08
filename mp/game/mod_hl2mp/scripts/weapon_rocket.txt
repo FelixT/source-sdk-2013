@@ -11,12 +11,9 @@ WeaponData
 	"bucket_position"		"1"
 	"autoswitchfrom"		"1"
 
-	"clip_size"				"-1"
-	"clip2_size"			"-1"
-	"default_clip"			"12"
-	"default_clip2"			"-1"
+	"clip_size"				"4"
 
-	"primary_ammo"			"rpg_round"
+	"primary_ammo"			"Rockets"
 	"secondary_ammo"		"None"
 
 	"weight"				"0"

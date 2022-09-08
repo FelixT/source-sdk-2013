@@ -169,6 +169,7 @@ void CHL2MP_Player::GiveAllItems( void )
 	CBasePlayer::GiveAmmo( 255,	"Buckshot");
 	CBasePlayer::GiveAmmo( 32,	"357" );
 	CBasePlayer::GiveAmmo( 12,	"rpg_round");
+	CBasePlayer::GiveAmmo( 100, "Rockets" );
 
 	CBasePlayer::GiveAmmo( 1,	"grenade" );
 	CBasePlayer::GiveAmmo( 2,	"slam" );
@@ -204,7 +205,7 @@ void CHL2MP_Player::GiveDefaultItems( void )
 	CBasePlayer::GiveAmmo( 6,	"Buckshot");
 	CBasePlayer::GiveAmmo( 6,	"357" );
 	CBasePlayer::GiveAmmo( 12,	"rpg_round" );
-	//CBasePlayer::GiveAmmo(3, "rockets");
+	CBasePlayer::GiveAmmo( 100, "Rockets" );
 
 	if ( GetPlayerModelType() == PLAYER_SOUNDS_METROPOLICE || GetPlayerModelType() == PLAYER_SOUNDS_COMBINESOLDIER )
 	{
@@ -220,7 +221,7 @@ void CHL2MP_Player::GiveDefaultItems( void )
 	GiveNamedItem( "weapon_frag" );
 	GiveNamedItem( "weapon_physcannon" );
 	GiveNamedItem( "weapon_rpg" );
-	GiveNamedItem("weapon_rocket");
+	GiveNamedItem( "weapon_rocket" );
 
 	const char *szDefaultWeaponName = engine->GetClientConVarValue( engine->IndexOfEdict( edict() ), "cl_defaultweapon" );
 
