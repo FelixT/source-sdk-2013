@@ -55,7 +55,6 @@ config.cfg
 *.tmp
 
 mp/game/bin/*
-mp/game/mod_hl2mp/bin/*
 *.cache
 *.dt
 *.vcxproj.*

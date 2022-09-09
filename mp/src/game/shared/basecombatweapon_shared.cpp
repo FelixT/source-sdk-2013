@@ -49,6 +49,9 @@
 // script HudAnimations.txt (which I can't read here). 
 #define MIN_HUDHINT_DISPLAY_TIME 7.0f
 
+// cooldown from switching weapons during which the player can't shoot
+#define SWITCH_WEAPON_COOLDOWN 0.3f
+
 #define HIDEWEAPON_THINK_CONTEXT			"BaseCombatWeapon_HideThink"
 
 extern bool UTIL_ItemCanBeTouchedByPlayer( CBaseEntity *pItem, CBasePlayer *pPlayer );
@@ -1418,12 +1421,12 @@ bool CBaseCombatWeapon::DefaultDeploy( char *szViewModel, char *szWeaponModel, i
 		SetViewModel();
 		SendWeaponAnim( iActivity );
 
-		pOwner->SetNextAttack( gpGlobals->curtime + SequenceDuration() );
+		pOwner->SetNextAttack(gpGlobals->curtime + SWITCH_WEAPON_COOLDOWN);
 	}
 
 	// Can't shoot again until we've finished deploying
-	m_flNextPrimaryAttack	= gpGlobals->curtime + SequenceDuration();
-	m_flNextSecondaryAttack	= gpGlobals->curtime + SequenceDuration();
+	m_flNextPrimaryAttack = gpGlobals->curtime + SWITCH_WEAPON_COOLDOWN;
+	m_flNextSecondaryAttack = gpGlobals->curtime + SWITCH_WEAPON_COOLDOWN;
 	m_flHudHintMinDisplayTime = 0;
 
 	m_bAltFireHudHintDisplayed = false;

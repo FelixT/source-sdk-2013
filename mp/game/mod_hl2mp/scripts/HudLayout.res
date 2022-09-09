@@ -502,4 +502,44 @@
 		"visible"		"0"
 		"enabled"		"0"
 	}
+
+	HudCapture
+	{
+		"fieldName" "HudCapture"
+		"xpos"	"r140"
+		"ypos"	"6"
+		"wide"	"136"
+		"tall"  "36"
+		"visible" "1"
+		"enabled" "1"
+
+		"PaintBackgroundType"	"2"
+
+		"text_xpos" "8"
+		"text_ypos" "20"
+		"digit_xpos" "44"
+		"digit_ypos" "2"
+		"digit2_xpos" "98"
+		"digit2_ypos" "16"
+	}
+
+	HudTeamScores
+	{
+		"fieldName" "HudTeamScores"
+		"xpos"	"c-68"
+		"ypos"	"6"
+		"wide"	"136"
+		"tall"  "36"
+		"visible" "1"
+		"enabled" "1"
+
+		"PaintBackgroundType"	"2"
+
+		"text_xpos" "8"
+		"text_ypos" "20"
+		"digit_xpos" "44"
+		"digit_ypos" "2"
+		"digit2_xpos" "98"
+		"digit2_ypos" "16"
+	}
 }

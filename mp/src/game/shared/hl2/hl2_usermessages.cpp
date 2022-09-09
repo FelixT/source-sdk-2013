@@ -46,6 +46,9 @@ void RegisterUserMessages( void )
 	usermessages->Register( "AchievementEvent", -1 );
 	usermessages->Register( "UpdateJalopyRadar", -1 );
 
+	// custom
+	usermessages->Register("CapturePercent", 4);
+
 #ifndef _X360
 	// NVNT register haptic user messages
 	RegisterHapticMessages();

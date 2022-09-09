@@ -285,14 +285,21 @@ $Project "Server (HL2MP)"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_pistol.cpp"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_rpg.cpp"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_rpg.h"
-				$File	"$SRCDIR\game\shared\hl2mp\weapon_rocket.cpp"
-				$File	"$SRCDIR\game\shared\hl2mp\weapon_rocket.h"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_shotgun.cpp"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.cpp"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.h"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_smg1.cpp"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_stunstick.cpp"
 			}
+		}
+
+		$Folder	"MOD"
+		{
+			$File	"$SRCDIR\game\shared\mod\weapon_rocket.cpp"
+			$File	"$SRCDIR\game\shared\mod\weapon_rocket.h"
+			$File	"$SRCDIR\game\shared\mod\controlpoint_gamerules.cpp"
+			$File	"$SRCDIR\game\shared\mod\controlpoint_gamerules.h"
+			$File	"$SRCDIR\game\server\mod\capture_entity.cpp"
 		}
 	}
 }
