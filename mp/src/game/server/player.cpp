@@ -1590,6 +1590,8 @@ const impactdamagetable_t &CBasePlayer::GetPhysicsImpactDamageTable()
 
 int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 {
+	float flHealthPrev = m_iHealth;
+
 	// set damage type sustained
 	m_bitsDamageType |= info.GetDamageType();
 
@@ -1627,6 +1629,7 @@ int CBasePlayer::OnTakeDamage_Alive( const CTakeDamageInfo &info )
 		event->SetInt("userid", GetUserID() );
 		event->SetInt("health", MAX(0, m_iHealth) );
 		event->SetInt("priority", 5 );	// HLTV event priority, not transmitted
+		event->SetInt("damage", ((int)flHealthPrev - GetHealth()));
 
 		if ( attacker->IsPlayer() )
 		{

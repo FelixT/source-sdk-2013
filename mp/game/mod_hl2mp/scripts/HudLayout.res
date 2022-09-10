@@ -542,4 +542,20 @@
 		"digit2_xpos" "98"
 		"digit2_ypos" "16"
 	}
+
+	HudDamageNumber
+	{
+		"fieldName" "HudDamageNumber"
+		"xpos"	"c-51"
+		"ypos"	"185"
+		"wide"	"102"
+		"tall"  "36"
+		"visible" "1"
+		"enabled" "1"
+
+		"text_xpos" "8"
+		"text_ypos" "20"
+		"digit_xpos" "44"
+		"digit_ypos" "2"
+	}
 }

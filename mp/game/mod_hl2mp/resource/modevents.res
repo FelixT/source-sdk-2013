@@ -48,4 +48,12 @@
 		"player"	"byte"		// entindex of the player
 		"achievement"	"short"		// achievement ID
 	}
+
+	"player_hurt"
+	{
+		"userid" "short"
+		"health"	"short"
+		"damage" "short"
+		"attacker" "short"
+	}
 }

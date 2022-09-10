@@ -638,3 +638,13 @@ event PoisonLoop
 {
 	RunEvent PoisonPulse 0.0
 }
+
+event DamageNumberDisplay
+{
+	Animate HudDamageNumber		FgColor		"BrightFg"		Linear	0.0		0.05
+	Animate HudDamageNumber		FgColor		"FgColor"		Deaccel	0.05		0.4
+	Animate HudDamageNumber		FgColor		"0 0 0 0"		Linear	0.45		0.15
+	Animate HudDamageNumber		Ypos			"185"			Linear	0.0		0.05
+	Animate HudDamageNumber		Ypos			"175"			Linear	0.05		0.1
+	Animate HudDamageNumber		Ypos			"155"			Deaccel	0.15		0.5
+}

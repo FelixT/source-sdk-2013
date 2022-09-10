@@ -179,6 +179,7 @@ $Project "Client (HL2MP)"
 			$File	"$SRCDIR\game\shared\mod\controlpoint_gamerules.h"
 			$File	"$SRCDIR\game\client\mod\hud_capture.cpp"
 			$File	"$SRCDIR\game\client\mod\hud_teamscores.cpp"
+			$File	"$SRCDIR\game\client\mod\hud_damagenumber.cpp"
 		}
 	}
 }
